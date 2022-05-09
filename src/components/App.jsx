@@ -39,6 +39,7 @@ function App() {
       showAll={showAll}
       />
 
+
       {displayMain &&<Main 
       word = {word}
       setWord={setWord}
