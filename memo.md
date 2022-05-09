@@ -41,6 +41,7 @@ $ npx knex migrate:up
 up関数を走らせてテーブルを作成
 
 ・環境変数の利用
+(参照: https://symfoware.blog.fc2.com/blog-entry-2548.html)
 サーバーが立ち上がっていることを確認
 $ npm install dotenv --save
 
@@ -56,3 +57,19 @@ DB_PASSWORD=NULL
 require('dotenv').config();
 -------------------
 
+・シード
+シードファイルの作成
+$ npx knex seed:make vocabList
+指定場所（今回はseed）にシード用のファイルの雛形が作成される
+-------------------
+exports.seed = async function(knex) {
+  await knex("vocab_list").del()
+  await knex("vocab_list").insert([
+    {eng: "implement", jpn: "実装する"},
+    {eng: "parentheses", jpn: "丸カッコ"},
+    {eng: "integers", jpn: "整数"}
+  ])
+};  
+-------------------
+$ npx knex seed:run
+問題なければインサートされる
