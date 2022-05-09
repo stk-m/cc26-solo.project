@@ -1,5 +1,5 @@
 // import Main from "./Main";
-// import AllList from "./AllList";
+import AllList from "./AllList";
 // import Add from "./Add";
 // import Memorized from "./Memorized";
 // import Navbar from "./Navbar";
