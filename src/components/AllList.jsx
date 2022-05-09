@@ -1,15 +1,15 @@
 import React,{ useState, useEffect } from "react";
 import axios from "axios";
 
-export default function AllList(){
+export default function AllList({allList, getAllList}){
 
-    const [allList, setAllList] = useState([])
+    // const [allList, setAllList] = useState([])
 
-    const getAllList = async ()=>{
-        const res = await axios.get("/list");
-        const lists = res.data;
-        setAllList(lists)
-    }
+    // const getAllList = async ()=>{
+    //     const res = await axios.get("/list");
+    //     const lists = res.data;
+    //     setAllList(lists)
+    // }
 
 
     useEffect(()=>{
@@ -18,8 +18,8 @@ export default function AllList(){
 
     return(
     <>
-       {allList.map(list=>(
-           <div>{list.eng} &#128073; {list.jpn}</div>
+       {allList.map((list, key)=>(
+           <div key={key}>{list.eng} &#128073; {list.jpn}</div>
        ))}
     </>
     );

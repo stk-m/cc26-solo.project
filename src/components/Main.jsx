@@ -1,37 +1,33 @@
-export default function Main(){
+import React,{ useEffect } from "react";
+import axios from "axios";
+
+export default function Main({ word, setWord}){
+
+    const getRandomWord = async () =>{
+        // console.log("random",allList)
+        const res = await axios.get("/list");
+        const lists = res.data;
+        // setAllList(lists);
+    
+        const randomId = Math.floor(Math.random()* 32) + 1;
+        // console.log("id",randomId);
+        const random = lists.filter(list => list.id === randomId);
+        // console.log("word", random);
+        setWord(random)
+      }
 
 
-    // const [allList, setAllList] = useState([])
-    // const [randomWord, setRandomWord] = useState([])
-    // const getRandomWord = async ()=>{
-    //     const res = await axios.get("/list");
-    //     const lists = res.data;
-    //     const getRandomId = (min, max) => {
-    //         min = Math.ceil(min);
-    //         max = Math.floor(max);
-    //         return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-    //       }
-    //     const randamId = getRandomId(1, 32)
-        
-    //     const word = lists.filter(list => {
-    //         if(list.id === randamId){
-    //             return list
-    //         }
-    //     })
-    //     //setRandomWord(word)
-    //     console.log(word)
-    // }
-
-
-    // useEffect(()=>{
-    //     getRandomWord()
-    // },[])
+    useEffect(()=>{
+        getRandomWord()
+    },[])
 
 
 
     return(
     <>
-        here is main
+       {word.map((elem, key)=>(
+           <div key={key}>{elem.eng} {elem.jpn}</div>
+       ))}
     </>
     );
 };

@@ -1,11 +1,12 @@
 import React from "react";
 
-export default function Navbar(){
+export default function Navbar({displayMain, showMain, displayAll,showAll}){
 
     return(
-    <>
-        here is nabvar
-    </>
+    <div className="navbar">
+        <button onClick={showMain}>Main</button>
+        <button onClick={showAll}>All List</button>
+    </div>
     );
 };
 
