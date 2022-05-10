@@ -30,7 +30,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className="content-container">
       <h1>vocabulary card</h1>
       <Navbar 
       showMain={showMain}
