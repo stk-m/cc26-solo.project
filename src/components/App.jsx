@@ -30,7 +30,7 @@ function App() {
 
 
   return (
-    <>
+    <div>
       <h1>vocabulary card</h1>
       <Navbar 
       displayMain={displayMain}
@@ -49,7 +49,7 @@ function App() {
       getAllList = {getAllList}
       allList={allList}
       />}
-    </>
+    </div>
   );
 }
 
