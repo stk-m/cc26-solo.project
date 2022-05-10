@@ -24,15 +24,12 @@ export default function Main({ word, setWord}){
         setDisplayWord(false)
       }
 
-
     useEffect(()=>{
         getRandomWord()
     },[])
 
-
-
     return(
-    <>
+    <div className="main-content">
         <h3>Let's study!</h3>
         <ol>
             <li>Check an English word!</li>
@@ -42,13 +39,14 @@ export default function Main({ word, setWord}){
             <li>Go to next word&#129412;</li>
         </ol>
        {word.map((elem, key)=>(
-        <div key={key}>
+        <div className="wordList"
+        key={key}>
             {elem.eng} 
             <button onClick={toggle}>check!</button>
             {displayWord && elem.jpn}
         </div>
        ))}
        <button onClick={getRandomWord}>Next</button>
-    </>
+    </div>
     );
 };
