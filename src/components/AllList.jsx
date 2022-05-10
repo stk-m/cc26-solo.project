@@ -1,16 +1,6 @@
-import React,{ useState, useEffect } from "react";
-import axios from "axios";
+import React,{ useEffect } from "react";
 
 export default function AllList({allList, getAllList}){
-
-    // const [allList, setAllList] = useState([])
-
-    // const getAllList = async ()=>{
-    //     const res = await axios.get("/list");
-    //     const lists = res.data;
-    //     setAllList(lists)
-    // }
-
 
     useEffect(()=>{
         getAllList()
