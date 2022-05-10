@@ -19,7 +19,7 @@
   },
   "proxy": "http://localhost:8080",
   "scripts": {
-    "start": "react-scripts start && nodemon server.js && webpack --mode=development",
+    "start": "react-scripts start && nodemon server.js ",
     "build": "react-scripts build",
     "migrate": "npx knex migrate:latest --knexfile knexfile.js",
     "seed": "npx knex seed:run --knexfile knexfile.js",
