@@ -33,18 +33,13 @@ function App() {
     <div>
       <h1>vocabulary card</h1>
       <Navbar 
-      displayMain={displayMain}
       showMain={showMain}
-      displayAll={displayAll}
       showAll={showAll}
       />
-
-
       {displayMain &&<Main 
       word = {word}
       setWord={setWord}
       />}
-
       {displayAll && <AllList 
       getAllList = {getAllList}
       allList={allList}

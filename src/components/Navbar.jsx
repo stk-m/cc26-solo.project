@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Navbar({displayMain, showMain, displayAll,showAll}){
+export default function Navbar({ showMain, showAll }){
 
     return(
     <div className="navbar">
